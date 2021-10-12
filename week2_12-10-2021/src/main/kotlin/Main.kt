@@ -45,4 +45,15 @@ fun success() {
 }
 
 fun challengeTwo(){
+
+    val diceResult = (1..6).random()
+    val userAnswer = readLine()
+
+    if (userAnswer == "low" && (1..3).contains(diceResult)){
+        success()
+    } else if (userAnswer == "high" && (4..6).contains(diceResult)){
+        success()
+    } else {
+        gameOver()
+    }
 }
