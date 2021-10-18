@@ -6,18 +6,21 @@ fun main(){
 }
 
 fun challengeOne() {
-    val optionsRiddle = setOf("Björn", "Ivar", "Hvisterk")
-    val playerChoice = readLine()
     println(
         "For your first task in this journey you'll have to solve the following " +
                 " riddle: Who was the firstborn son of Ragnar Lothbrok"
     )
-    if(optionsRiddle.contains(playerChoice)){
+    val optionsRiddle = setOf("Björn", "Ivar", "Hvisterk")
+    val playerChoice = readLine()
+    val correctAnswer = "Björn"
+
+    if(optionsRiddle.contains(playerChoice) && playerChoice == correctAnswer){
+        println("indeed Björn was the correct answer")
         success()
-        challengeTwo()
     } else{
         gameOver()
     }
+
 
 }
 
@@ -34,19 +37,14 @@ fun gameOver() {
 }
 
 fun success() {
-    val playerChoice = readLine()
-    val correctAnswer = "Björn"
-    if (playerChoice == correctAnswer) {
         println(
             "yess my man this is the right answer, you can now enter" +
                     " the second challenge which will bring you one step closer to freedom"
         )
-    }
+    challengeTwo()
 }
 
 fun challengeTwo(){
-<<<<<<< Updated upstream
-=======
     println("for your next challenge you'll have to dice")
     val diceResult = (1..6).random()
     val userAnswer = readLine()
@@ -54,11 +52,6 @@ fun challengeTwo(){
     if (userAnswer == "low" && (1..3).contains(diceResult)){
         success()
     } else if (userAnswer == "high" && (4..6).contains(diceResult)){
-        challengeThree()
-    } else {
-        gameOver()
-    }
->>>>>>> Stashed changes
 }
 
 fun challengeThree() {
