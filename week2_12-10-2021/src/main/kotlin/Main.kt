@@ -45,4 +45,37 @@ fun success() {
 }
 
 fun challengeTwo(){
+<<<<<<< Updated upstream
+=======
+    println("for your next challenge you'll have to dice")
+    val diceResult = (1..6).random()
+    val userAnswer = readLine()
+
+    if (userAnswer == "low" && (1..3).contains(diceResult)){
+        success()
+    } else if (userAnswer == "high" && (4..6).contains(diceResult)){
+        challengeThree()
+    } else {
+        gameOver()
+    }
+>>>>>>> Stashed changes
+}
+
+fun challengeThree() {
+    println("You will have to battle against Ragnar lothbrok himself so choose your weapon wisely")
+    val answers = setOf<String>("axe", "speer", "bow and arrow")
+    println("What weapon are you gonna use?: axe - speer - bow and arrow")
+    val userAnswer = readLine()
+
+    if (userAnswer == "axe") {
+        println("Good job! the axe is the the best option for this battle")
+
+
+    } else if(userAnswer == "speer") {
+        println("Ragnar was to close to use the speer, he easily killed you.")
+        challengeTwo()
+    } else {
+        println("you've lost")
+        gameOver()
+    }
 }
