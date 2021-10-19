@@ -1,5 +1,12 @@
 fun main(){
-    val Design = Course("Design 3", "Fenna", "creating concepts", 5, "Design", 5, 2)
-    Design.teacher
+    val persons = arrayOf( Teacher("Fenna"), Student("Niko"), Comedian("Mike"))
+
+    val chatPartner= persons.random()
+    chatPartner.introduction()
+    chatPartner.talk()
+
+
 }
+
+
 
