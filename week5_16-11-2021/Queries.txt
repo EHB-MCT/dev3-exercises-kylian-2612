@@ -1,0 +1,52 @@
+Queries week 5
+First batch 
+
+1. 	SELECT productName FROM products
+	WHERE productCode = 'S24_3856';
+	"1956 Porsche 356A Coupe"
+
+2. 	SELECT AVG(buyPrice) FROM products;
+	"54.395182"
+
+3.	SELECT COUNT(*) FROM products
+	WHERE productName LIKE '% Ford %';
+	"15"
+
+4. 	SELECT productName, MAX(buyPrice) FROM products;
+	"103.42"
+
+5.	SELECT COUNT(productLine) FROM products
+	WHERE productLine = 'ships';
+	"9"
+
+Second batch
+
+1.	SELECT COUNT(*) FROM orders
+	WHERE customerNumber = '328';
+	"3"
+
+2.	SELECT COUNT(*) FROM orders
+	INNER JOIN customers ON customers.customerNumber = order.customerNumber
+	WHERE customers.contactFirstName = 'Julie' AND customers.contactLastName = 'Young'
+	"3"
+
+3.	SELECT COUNT(*) FROM customers
+	WHERE country = 'USA' AND creditLimit = '0.00'
+	"1"
+
+4. 	SELECT customers.customerName, AVG(amount) AS average FROM payments
+	INNER JOIN customers ON customers.customerNumber = payments.customerNumber
+	GROUP BY customers.customerNumber
+	ORDER BY average DESC
+	LIMIT 1;
+	"Collectable Mini Designs Co. Average 80375.2400"
+
+Third batch
+
+1.	SELECT SUM(amount) FROM payments
+	INNER  JOIN customers ON customers.customerNumber = payments.customerNumber
+	WHERE customers.contactFirstName = 'William' AND customers.contactLastName = 'Brown';
+	"38281.51"
+
+
+
