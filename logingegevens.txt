@@ -1,0 +1,4 @@
+Login + naam database: 2122DEV3053
+Wachtwoord: 29731486
+PhPMyAdmin: https://dt5.ehb.be/phpmyadmin
+Hostname/server: dt5.ehb.be 
